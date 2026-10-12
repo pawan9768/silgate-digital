@@ -54,11 +54,11 @@ const socialLinks = [
     href: "https://www.instagram.com/silgate_digital/",
     Icon: Instagram,
   },
-  {
-    label: "Facebook",
-    href: "https://www.facebook.com/Silgatemedia",
-    Icon: Facebook,
-  },
+  // {
+  //   label: "Facebook",
+  //   href: "https://www.facebook.com/Silgatemedia",
+  //   Icon: Facebook,
+  // },
 ];
 
 const CONTACT_PHONE = "+91 81088 10916";
