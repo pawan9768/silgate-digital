@@ -1,27 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X, Phone, ArrowUpRight } from "lucide-react";
-
 import { Youtube, Linkedin, Instagram } from "../assets/icons/SocialIcons";
-
 import logoImg from "../assets/images/logo.png";
-
 export default function Navbar() {
   const location = useLocation();
-
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [mobileExpandedSection, setMobileExpandedSection] = useState(null);
   const [scrolled, setScrolled] = useState(false);
 
-  /* =========================
-     SCROLL EFFECT
-  ========================= */
+  // scroll effect
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-
     window.addEventListener("scroll", handleScroll);
 
     return () => {
@@ -29,38 +23,33 @@ export default function Navbar() {
     };
   }, []);
 
-  /* =========================
-     CLOSE MOBILE MENU ON ROUTE CHANGE
-  ========================= */
+  // CLOSE MOBILE MENU ON ROUTE CHANGE
+
   useEffect(() => {
     setMobileMenuOpen(false);
     setActiveDropdown(null);
     setMobileExpandedSection(null);
-
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   }, [location.pathname]);
 
-  /* =========================
-     MOBILE ACCORDION
-  ========================= */
+  //  MOBILE ACCORDION
+
   const toggleMobileSubmenu = (name) => {
     setMobileExpandedSection((current) => (current === name ? null : name));
   };
 
-  /* =========================
-     CLOSE MOBILE MENU
-  ========================= */
+  //  CLOSE MOBILE MENU
+
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
     setMobileExpandedSection(null);
   };
 
-  /* =========================
-     ACTIVE ROUTE
-  ========================= */
+  //  ACTIVE ROUTE
+
   const isActive = (path) => {
     return location.pathname === path;
   };
@@ -71,9 +60,6 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-[100] w-full">
-      {/* =====================================================
-          NAVBAR
-      ====================================================== */}
       <nav
         className={`
           w-full
@@ -97,9 +83,7 @@ export default function Navbar() {
             gap-4
           "
         >
-          {/* =================================================
-              LOGO
-          ================================================== */}
+          {/* logo */}
           <Link
             to="/"
             onClick={closeMobileMenu}
@@ -117,10 +101,7 @@ export default function Navbar() {
               "
             />
           </Link>
-
-          {/* =================================================
-              DESKTOP NAVIGATION
-          ================================================== */}
+          {/* DESKTOP NAVIGATION */}
           <div className="hidden lg:flex items-center gap-1 xl:gap-2">
             {/* HOME */}
             <Link
@@ -141,10 +122,7 @@ export default function Navbar() {
             >
               Home
             </Link>
-
-            {/* =================================================
-                ABOUT US
-            ================================================== */}
+            {/* About us */}
             <Link
               to="/about"
               className={`
@@ -163,10 +141,7 @@ export default function Navbar() {
             >
               About Us
             </Link>
-
-            {/* =================================================
-                SERVICES
-            ================================================== */}
+            {/* Services */}
             <div
               className="relative"
               onMouseEnter={() => setActiveDropdown("services")}
@@ -194,7 +169,6 @@ export default function Navbar() {
                 Services
                 <ChevronDown className="w-3.5 h-3.5" />
               </Link>
-
               {activeDropdown === "services" && (
                 <div
                   className="
@@ -219,7 +193,6 @@ export default function Navbar() {
                       <h3 className="font-bold text-xs text-[#00529B] uppercase tracking-wider mb-3">
                         Creative & Brand
                       </h3>
-
                       <div className="space-y-2">
                         <Link
                           to="/services/ai-video-production-agency"
@@ -227,42 +200,36 @@ export default function Navbar() {
                         >
                           AI Generated Videos
                         </Link>
-
                         <Link
                           to="/services/creative-communication"
                           className="block hover:text-[#00529B]"
                         >
                           Creative & Communication
                         </Link>
-
                         <Link
                           to="/services/creative-communication/brand-strategy"
                           className="block text-xs text-slate-500 hover:text-[#F36C3D]"
                         >
                           Brand Strategy
                         </Link>
-
                         <Link
                           to="/services/creative-communication/logo-identity-design"
                           className="block text-xs text-slate-500 hover:text-[#F36C3D]"
                         >
                           Logo & Identity Design
                         </Link>
-
                         <Link
                           to="/services/creative-communication/product-packaging"
                           className="block text-xs text-slate-500 hover:text-[#F36C3D]"
                         >
                           Product Packaging
                         </Link>
-
                         <Link
                           to="/services/brand-video-production-agency"
                           className="block hover:text-[#00529B]"
                         >
                           Brand Video Production
                         </Link>
-
                         <Link
                           to="/services/ugc-video-agency"
                           className="block hover:text-[#00529B]"
@@ -271,13 +238,11 @@ export default function Navbar() {
                         </Link>
                       </div>
                     </div>
-
                     {/* COLUMN 2 */}
                     <div>
                       <h3 className="font-bold text-xs text-[#00529B] uppercase tracking-wider mb-3">
                         Content & Reputation
                       </h3>
-
                       <div className="space-y-2">
                         <Link
                           to="/services/content-marketing"
@@ -285,42 +250,36 @@ export default function Navbar() {
                         >
                           Content Marketing
                         </Link>
-
                         <Link
                           to="/services/content-marketing/seo-copywriting"
                           className="block text-xs text-slate-500 hover:text-[#F36C3D]"
                         >
                           SEO Copywriting
                         </Link>
-
                         <Link
                           to="/services/content-marketing/video-tvc-scripts"
                           className="block text-xs text-slate-500 hover:text-[#F36C3D]"
                         >
                           Video & TVC Scripts
                         </Link>
-
                         <Link
                           to="/services/online-reputation-management"
                           className="block hover:text-[#00529B]"
                         >
                           Online Reputation Mgmt
                         </Link>
-
                         <Link
                           to="/services/online-reputation-management/brand-reputation-management"
                           className="block text-xs text-slate-500 hover:text-[#F36C3D]"
                         >
                           Brand Reputation
                         </Link>
-
                         <Link
                           to="/services/online-reputation-management/corporate-reputation-management"
                           className="block text-xs text-slate-500 hover:text-[#F36C3D]"
                         >
                           Corporate Reputation
                         </Link>
-
                         <Link
                           to="/services/ad-management"
                           className="block hover:text-[#00529B]"
@@ -329,13 +288,11 @@ export default function Navbar() {
                         </Link>
                       </div>
                     </div>
-
                     {/* COLUMN 3 */}
                     <div>
                       <h3 className="font-bold text-xs text-[#00529B] uppercase tracking-wider mb-3">
                         Search & Performance
                       </h3>
-
                       <div className="space-y-2">
                         <Link
                           to="/services/seo-services"
@@ -343,42 +300,36 @@ export default function Navbar() {
                         >
                           SEO Services
                         </Link>
-
                         <Link
                           to="/aeo-services-company-in-india"
                           className="block hover:text-[#00529B]"
                         >
                           AEO Services
                         </Link>
-
                         <Link
                           to="/generative-engine-optimization-india"
                           className="block hover:text-[#00529B]"
                         >
                           GEO Services
                         </Link>
-
                         <Link
                           to="/performance-marketing-agency"
                           className="block hover:text-[#00529B]"
                         >
                           Performance Marketing
                         </Link>
-
                         <Link
                           to="/services/b2b-seo-company-in-india"
                           className="block text-xs text-slate-500 hover:text-[#F36C3D]"
                         >
                           B2B SEO Company
                         </Link>
-
                         <Link
                           to="/services/local-seo-company-in-india"
                           className="block text-xs text-slate-500 hover:text-[#F36C3D]"
                         >
                           Local SEO & GMB
                         </Link>
-
                         <Link
                           to="/services/search-engine-marketing"
                           className="block text-xs text-slate-500 hover:text-[#F36C3D]"
@@ -387,13 +338,11 @@ export default function Navbar() {
                         </Link>
                       </div>
                     </div>
-
                     {/* COLUMN 4 */}
                     <div>
                       <h3 className="font-bold text-xs text-[#00529B] uppercase tracking-wider mb-3">
                         Social & Tech
                       </h3>
-
                       <div className="space-y-2">
                         <Link
                           to="/services/social-media-marketing"
@@ -401,42 +350,36 @@ export default function Navbar() {
                         >
                           Social Media Marketing
                         </Link>
-
                         <Link
                           to="/services/influencer-marketing-agency"
                           className="block hover:text-[#00529B]"
                         >
                           Influencer Marketing
                         </Link>
-
                         <Link
                           to="/services/website-development-india"
                           className="block hover:text-[#00529B]"
                         >
                           Website Development
                         </Link>
-
                         <Link
                           to="/services/website-development-india/corporate-website-design"
                           className="block text-xs text-slate-500 hover:text-[#F36C3D]"
                         >
                           Corporate Web Design
                         </Link>
-
                         <Link
                           to="/services/web-application-development"
                           className="block hover:text-[#00529B]"
                         >
                           Web App Development
                         </Link>
-
                         <Link
                           to="/rankstreet"
                           className="block hover:text-[#00529B]"
                         >
                           RankStreet
                         </Link>
-
                         <Link
                           to="/managed-it-services-usa"
                           className="block hover:text-[#00529B]"
@@ -446,7 +389,6 @@ export default function Navbar() {
                       </div>
                     </div>
                   </div>
-
                   <div
                     className="
                     mt-6
@@ -462,7 +404,6 @@ export default function Navbar() {
                     <span className="text-xs text-zinc-500">
                       Explore our complete digital services.
                     </span>
-
                     <Link
                       to="/services"
                       className="
@@ -481,54 +422,7 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-
-            {/* =================================================
-                PRODUCTS
-            ================================================== */}
-            {/* <Link
-              to="/products"
-              className={`
-                px-3
-                py-2
-                text-sm
-                font-medium
-                rounded-lg
-                transition-colors
-                ${
-                  isActive("/products")
-                    ? "text-[#00529B] font-semibold"
-                    : "text-zinc-700 hover:text-[#00529B] hover:bg-zinc-50"
-                }
-              `}
-            >
-              Products
-            </Link> */}
-
-            {/* =================================================
-                CLIENTS
-            ================================================== */}
-            {/* <Link
-              to="/clients"
-              className={`
-                px-3
-                py-2
-                text-sm
-                font-medium
-                rounded-lg
-                transition-colors
-                ${
-                  isActive("/clients")
-                    ? "text-[#00529B] font-semibold"
-                    : "text-zinc-700 hover:text-[#00529B] hover:bg-zinc-50"
-                }
-              `}
-            >
-              Clients
-            </Link> */}
-
-            {/* =================================================
-                INDUSTRY
-            ================================================== */}
+            {/* Industry */}
             <div
               className="relative"
               onMouseEnter={() => setActiveDropdown("industry")}
@@ -558,7 +452,6 @@ export default function Navbar() {
                 Industries
                 <ChevronDown className="w-3.5 h-3.5" />
               </Link>
-
               {activeDropdown === "industry" && (
                 <div
                   className="
@@ -579,7 +472,6 @@ export default function Navbar() {
                   <h3 className="font-bold text-xs text-[#00529B] uppercase tracking-wider mb-3">
                     Industries We Excel In
                   </h3>
-
                   <div className="grid grid-cols-3 gap-3 text-sm">
                     {[
                       ["/automotive-digital-marketing-agency", "🚗 Automotive"],
@@ -641,7 +533,6 @@ export default function Navbar() {
                       </Link>
                     ))}
                   </div>
-
                   <div
                     className="
                     mt-4
@@ -657,7 +548,6 @@ export default function Navbar() {
                     <span className="text-xs text-zinc-500">
                       Explore all industry solutions.
                     </span>
-
                     <Link
                       to="/industries"
                       className="
@@ -677,11 +567,9 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* =================================================
-                RESOURCES
-            ================================================== */}
-            {/* <Link
-              to="/resources"
+            {/* blog */}
+            <Link
+              to="/blog"
               className={`
                 px-3
                 py-2
@@ -690,215 +578,36 @@ export default function Navbar() {
                 rounded-lg
                 transition-colors
                 ${
-                  isActive("/resources")
+                  isActive("/blog")
                     ? "text-[#00529B] font-semibold"
                     : "text-zinc-700 hover:text-[#00529B] hover:bg-zinc-50"
                 }
               `}
             >
-              Resources
-            </Link> */}
-            <div
-              className="relative"
-              onMouseEnter={() => setActiveDropdown("resources")}
-              onMouseLeave={() => setActiveDropdown(null)}
+              Blog
+            </Link>
+
+            {/* Case Studies */}
+            <Link
+              to="/case-studies"
+              className={`
+                px-3
+                py-2
+                text-sm
+                font-medium
+                rounded-lg
+                transition-colors
+                ${
+                  isActive("/case-studies")
+                    ? "text-[#00529B] font-semibold"
+                    : "text-zinc-700 hover:text-[#00529B] hover:bg-zinc-50"
+                }
+              `}
             >
-              {/* Resources Button */}
-              <button
-                type="button"
-                className="
-      group
-      flex
-      items-center
-      gap-1.5
-      px-4
-      py-2.5
-      text-sm
-      font-semibold
-      text-zinc-700
-      hover:text-[#00529B]
-      hover:bg-[#00529B]/5
-      rounded-lg
-      transition-all
-      duration-200
-    "
-              >
-                Resources
-                <ChevronDown
-                  className={`
-        w-4
-        h-4
-        transition-transform
-        duration-200
-        ${
-          activeDropdown === "resources"
-            ? "rotate-180 text-[#00529B]"
-            : "text-zinc-500"
-        }
-      `}
-                />
-              </button>
+              Case Studies
+            </Link>
 
-              {/* Resources Dropdown */}
-              {activeDropdown === "resources" && (
-                <div
-                  className="
-        absolute
-        top-full
-        left-1/2
-        -translate-x-1/2
-        mt-3
-        w-[420px]
-        max-w-[90vw]
-        bg-white
-        rounded-2xl
-        border
-        border-zinc-100
-        shadow-[0_20px_50px_rgba(0,0,0,0.12)]
-        overflow-hidden
-        z-50
-        animate-[dropdown_0.2s_ease-out]
-      "
-                >
-                  {/* Links */}
-                  <div className="p-3">
-                    {[
-                      {
-                        path: "/automotive-digital-marketing-agency",
-                        label: "Case Studies",
-                        icon: (
-                          <svg
-                            className="w-5 h-5"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="1.8"
-                              d="M20 7h-4V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2ZM8 7V5h8v2"
-                            />
-                          </svg>
-                        ),
-                      },
-                      {
-                        path: "/beauty-skin-care-digital-marketing-agency",
-                        label: "Blog",
-                        icon: (
-                          <svg
-                            className="w-5 h-5"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="1.8"
-                              d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"
-                            />
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="1.8"
-                              d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"
-                            />
-                          </svg>
-                        ),
-                      },
-                    ].map(({ path, label, description, icon }) => (
-                      <Link
-                        key={path}
-                        to={path}
-                        className="
-              group
-              flex
-              items-center
-              gap-4
-              p-3.5
-              rounded-xl
-              hover:bg-[#00529B]/5
-              transition-all
-              duration-200
-            "
-                      >
-                        {/* Icon */}
-                        <div
-                          className="
-                flex
-                items-center
-                justify-center
-                w-11
-                h-11
-                rounded-xl
-                bg-[#00529B]/10
-                text-[#00529B]
-                group-hover:bg-[#00529B]
-                group-hover:text-white
-                transition-all
-                duration-200
-                shrink-0
-              "
-                        >
-                          {icon}
-                        </div>
-
-                        {/* Content */}
-                        <div className="flex-1 min-w-0">
-                          <p
-                            className="
-                  text-sm
-                  font-semibold
-                  text-zinc-800
-                  group-hover:text-[#00529B]
-                  transition-colors
-                "
-                          >
-                            {label}
-                          </p>
-
-                          <p className="mt-0.5 text-xs text-zinc-500">
-                            {description}
-                          </p>
-                        </div>
-
-                        {/* Arrow */}
-                        <svg
-                          className="
-                w-4
-                h-4
-                text-zinc-400
-                group-hover:text-[#00529B]
-                group-hover:translate-x-1
-                transition-all
-                duration-200
-                shrink-0
-              "
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="m9 18 6-6-6-6"
-                          />
-                        </svg>
-                      </Link>
-                    ))}
-                  </div>
-
-                  {/* Bottom Accent */}
-                  <div className="h-1 bg-gradient-to-r from-[#00529B] via-[#0074C8] to-[#00529B]" />
-                </div>
-              )}
-            </div>
-
-            {/* =================================================
-                CAREERS
-            ================================================== */}
+            {/* careers */}
             <Link
               to="/career"
               className={`
@@ -919,9 +628,7 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* =================================================
-              DESKTOP CTA
-          ================================================== */}
+          {/* Desktop CTA */}
           <div className="hidden lg:flex items-center">
             <Link
               to="/contact"
@@ -947,9 +654,7 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* =================================================
-              MOBILE HEADER
-          ================================================== */}
+          {/* mobile header */}
           <div className="flex lg:hidden items-center gap-2">
             <Link
               to="/contact"
@@ -967,7 +672,6 @@ export default function Navbar() {
             >
               Contact
             </Link>
-
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}
@@ -988,9 +692,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* =====================================================
-          MOBILE MENU
-      ====================================================== */}
+      {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-[200] lg:hidden">
           {/* BACKDROP */}
@@ -1007,7 +709,6 @@ export default function Navbar() {
             "
             onClick={closeMobileMenu}
           />
-
           {/* DRAWER */}
           <aside
             className="
@@ -1024,9 +725,7 @@ export default function Navbar() {
               overflow-hidden
             "
           >
-            {/* ===============================================
-                DRAWER HEADER
-            ================================================ */}
+            {/* Drawer header */}
             <div
               className="
                 flex
@@ -1049,7 +748,6 @@ export default function Navbar() {
                   className="h-9 w-auto object-contain"
                 />
               </Link>
-
               <button
                 type="button"
                 onClick={closeMobileMenu}
@@ -1072,9 +770,7 @@ export default function Navbar() {
               </button>
             </div>
 
-            {/* ===============================================
-                MOBILE LINKS
-            ================================================ */}
+            {/* mobile links */}
             <div
               className="
                 flex-1
@@ -1100,10 +796,7 @@ export default function Navbar() {
                 Home
               </Link>
 
-              {/* =================================================
-                  FIXED ABOUT US LINK
-                  IMPORTANT: THIS IS A LINK, NOT A BUTTON
-              ================================================== */}
+              {/* about us */}
               <Link
                 to="/about"
                 onClick={closeMobileMenu}
@@ -1120,9 +813,7 @@ export default function Navbar() {
                 About Us
               </Link>
 
-              {/* =================================================
-                  SERVICES
-              ================================================== */}
+              {/* services */}
               <div className="border-b border-zinc-100">
                 <button
                   type="button"
@@ -1140,7 +831,6 @@ export default function Navbar() {
                   aria-expanded={mobileExpandedSection === "services"}
                 >
                   <span>Services</span>
-
                   <ChevronDown
                     className={`
                       w-5
@@ -1152,7 +842,6 @@ export default function Navbar() {
                     `}
                   />
                 </button>
-
                 {mobileExpandedSection === "services" && (
                   <div
                     className="
@@ -1178,7 +867,6 @@ export default function Navbar() {
                     >
                       All Services
                     </Link>
-
                     {[
                       [
                         "/services/ai-video-production-agency",
@@ -1246,7 +934,6 @@ export default function Navbar() {
                   </div>
                 )}
               </div>
-
               {/* =================================================
                   PRODUCTS
               ================================================== */}
@@ -1267,7 +954,6 @@ export default function Navbar() {
                   aria-expanded={mobileExpandedSection === "products"}
                 >
                   <span>Products</span>
-
                   <ChevronDown
                     className={`
                       w-5
@@ -1279,7 +965,6 @@ export default function Navbar() {
                     `}
                   />
                 </button>
-
                 {mobileExpandedSection === "products" && (
                   <div
                     className="
@@ -1307,7 +992,6 @@ export default function Navbar() {
                   </div>
                 )}
               </div> */}
-
               {/* =================================================
                   CLIENTS
               ================================================== */}
@@ -1327,9 +1011,7 @@ export default function Navbar() {
                 Clients
               </Link> */}
 
-              {/* =================================================
-                  INDUSTRY
-              ================================================== */}
+              {/* industry */}
               <div className="border-b border-zinc-100">
                 <button
                   type="button"
@@ -1347,7 +1029,6 @@ export default function Navbar() {
                   aria-expanded={mobileExpandedSection === "industry"}
                 >
                   <span>Industries</span>
-
                   <ChevronDown
                     className={`
                       w-5
@@ -1359,7 +1040,6 @@ export default function Navbar() {
                     `}
                   />
                 </button>
-
                 {mobileExpandedSection === "industry" && (
                   <div
                     className="
@@ -1450,10 +1130,8 @@ export default function Navbar() {
                 )}
               </div>
 
-              {/* =================================================
-                  RESOURCES
-              ================================================== */}
-              <div className="border-b border-zinc-100">
+              {/* resources */}
+              {/* <div className="border-b border-zinc-100">
                 <button
                   type="button"
                   onClick={() => toggleMobileSubmenu("resources")}
@@ -1470,7 +1148,6 @@ export default function Navbar() {
                   aria-expanded={mobileExpandedSection === "resources"}
                 >
                   <span>Resources</span>
-
                   <ChevronDown
                     className={`
                       w-5
@@ -1484,7 +1161,6 @@ export default function Navbar() {
                     `}
                   />
                 </button>
-
                 {mobileExpandedSection === "resources" && (
                   <div
                     className="
@@ -1508,7 +1184,6 @@ export default function Navbar() {
                     >
                       Blog
                     </Link>
-
                     <Link
                       to="/case-studies"
                       onClick={closeMobileMenu}
@@ -1524,11 +1199,43 @@ export default function Navbar() {
                     </Link>
                   </div>
                 )}
-              </div>
+              </div> */}
 
-              {/* =================================================
-                  CAREERS
-              ================================================== */}
+              {/* blog */}
+              <Link
+                to="/blog"
+                onClick={closeMobileMenu}
+                className={`
+                  block
+                  py-3
+                  text-base
+                  font-semibold
+                  border-b
+                  border-zinc-100
+                  ${isActive("/blog") ? "text-[#00529B]" : "text-zinc-900"}
+                `}
+              >
+                Blog
+              </Link>
+
+              {/* case studies */}
+              <Link
+                to="/case-studies"
+                onClick={closeMobileMenu}
+                className={`
+                  block
+                  py-3
+                  text-base
+                  font-semibold
+                  border-b
+                  border-zinc-100
+                  ${isActive("/case-studies") ? "text-[#00529B]" : "text-zinc-900"}
+                `}
+              >
+                Case Studies
+              </Link>
+
+              {/* careers */}
               <Link
                 to="/career"
                 onClick={closeMobileMenu}
@@ -1545,9 +1252,7 @@ export default function Navbar() {
                 Careers
               </Link>
 
-              {/* =================================================
-                  CONTACT
-              ================================================== */}
+              {/* Contact */}
               <Link
                 to="/contact"
                 onClick={closeMobileMenu}
@@ -1567,10 +1272,7 @@ export default function Navbar() {
                 Contact Us
               </Link>
             </div>
-
-            {/* ===============================================
-                MOBILE FOOTER
-            ================================================ */}
+            {/* MOBILE FOOTER */}
             <div
               className="
                 flex-shrink-0
@@ -1600,7 +1302,6 @@ export default function Navbar() {
                 <Phone className="w-4 h-4 text-[#F36C3D]" />
                 Call +91 81088 10916
               </a>
-
               <div
                 className="
                   flex
@@ -1620,7 +1321,6 @@ export default function Navbar() {
                 >
                   <Youtube className="w-5 h-5" />
                 </a>
-
                 <a
                   href="https://in.linkedin.com/company/Silgate-media-pvt-ltd"
                   target="_blank"
@@ -1630,7 +1330,6 @@ export default function Navbar() {
                 >
                   <Linkedin className="w-5 h-5" />
                 </a>
-
                 <a
                   href="https://www.instagram.com/Silgate.media/"
                   target="_blank"
