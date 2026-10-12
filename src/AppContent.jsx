@@ -18,6 +18,7 @@ import OtherCompanies from "./pages/OtherCompanies";
 import Products from "./pages/Products";
 import InfluencerPortfolio from "./pages/InfluencerPortfolio";
 import Showcase from "./pages/Showcase";
+import CaseStudies from "./pages/CaseStudies";
 import Industries from "./pages/Industries";
 import Faq from "./pages/Faq";
 import Sitemap from "./pages/Sitemap";
@@ -148,6 +149,8 @@ export default function AppContent() {
           element={<InfluencerPortfolio />}
         />
         <Route path="/influencer-portfolio" element={<InfluencerPortfolio />} />
+        <Route path="/case-studies" element={<CaseStudies />} />
+        <Route path="/case-studies/" element={<CaseStudies />} />
         <Route path="/showcase" element={<Showcase />} />
         <Route path="/portfolio" element={<Showcase />} />
         <Route path="/faq" element={<Faq />} />

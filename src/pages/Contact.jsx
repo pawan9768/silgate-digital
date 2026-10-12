@@ -267,7 +267,7 @@ export default function Contact() {
                 </span>
 
                 <h1 className="text-3xl sm:text-4xl lg:text-[44px] xl:text-[48px] font-extrabold text-[#07172C] leading-[1.12] tracking-tight mb-4 sm:mb-5">
-                  Let's Connect and Build Something Meaningful.
+                  Let's Connect and Build Something Great Together.
                 </h1>
 
                 <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl mb-7 sm:mb-9">
