@@ -277,23 +277,20 @@ export default function Industries() {
         {/* =========================================================
             3–10. EIGHT INDIVIDUAL INDUSTRY SECTIONS
         ========================================================== */}
-        <div className="divide-y divide-slate-100">
-          {industriesList.map((item, index) => {
-            const isEven = index % 2 === 1;
-            return (
-              <section
-                key={item.id}
-                id={item.id}
-                className={`py-12 md:py-16 transition-colors duration-200 ${
-                  isEven ? "bg-[#F8FAFC]" : "bg-white"
-                }`}
-              >
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-6 sm:py-8 md:py-14 bg-[#F8FAFC]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col gap-3 md:gap-0 md:divide-y md:divide-slate-200/70">
+              {industriesList.map((item) => (
+                <div
+                  key={item.id}
+                  id={item.id}
+                  className="md:py-7 lg:py-8 md:first:pt-0 md:last:pb-0"
+                >
                   {/* Desktop / Tablet Layout */}
                   <div className="hidden md:grid md:grid-cols-12 gap-8 lg:gap-10 items-center">
                     {/* Left: Image */}
                     <div className="md:col-span-5 lg:col-span-4">
-                      <div className="relative rounded-2xl overflow-hidden shadow-sm aspect-[16/10] bg-slate-100 group">
+                      <div className="relative rounded-2xl overflow-hidden shadow-xs aspect-[16/10] bg-slate-100 group border border-slate-200/60">
                         <img
                           src={item.image}
                           alt={item.alt}
@@ -304,7 +301,7 @@ export default function Industries() {
                     </div>
 
                     {/* Middle: Content */}
-                    <div className="md:col-span-5 lg:col-span-6 space-y-2.5">
+                    <div className="md:col-span-5 lg:col-span-6 space-y-2">
                       <span className="text-xs font-bold tracking-wider text-[#F36C3D] uppercase">
                         {item.label}
                       </span>
@@ -328,11 +325,11 @@ export default function Industries() {
                     </div>
                   </div>
 
-                  {/* Mobile Compact Card Layout (as in Mobile View reference) */}
+                  {/* Mobile Compact Card Layout (Continuous compact list with minimal uniform gap) */}
                   <div className="md:hidden">
                     <Link
                       to={item.link}
-                      className="flex items-center gap-3.5 p-3 rounded-2xl bg-white border border-slate-200/80 shadow-sm active:scale-[0.99] transition-transform"
+                      className="flex items-center gap-3.5 p-3 rounded-2xl bg-white border border-slate-200/80 shadow-xs active:scale-[0.99] transition-transform"
                     >
                       {/* Thumbnail */}
                       <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden bg-slate-100 shrink-0">
@@ -361,10 +358,10 @@ export default function Industries() {
                     </Link>
                   </div>
                 </div>
-              </section>
-            );
-          })}
-        </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* =========================================================
             11. DISCUSS YOUR DIGITAL REQUIREMENT (CTA SECTION)
