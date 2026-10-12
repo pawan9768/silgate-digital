@@ -24,14 +24,15 @@ export default function FeaturedBlogs({ posts = [], onViewAllClick }) {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 sm:mb-10">
           <div>
             <div className="text-xs font-bold uppercase tracking-wider text-[#F36C3D] mb-1.5">
-              FEATURED BLOGS
+              FEATURED INSIGHTS
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
-              <span>Our Latest Insights</span>
+              <span>Ideas & Insights Worth Exploring</span>
               <span className="text-slate-400 font-light">—</span>
             </h2>
             <p className="text-slate-600 text-xs sm:text-sm mt-1.5 max-w-xl">
-              Explore our handpicked articles on digital trends, strategies and best practices.
+              Discover selected articles covering digital strategies, technology, marketing, 
+              creative solutions and emerging trends that matter to modern businesses.
             </p>
           </div>
 
@@ -74,11 +75,10 @@ export default function FeaturedBlogs({ posts = [], onViewAllClick }) {
                 type="button"
                 onClick={() => setMobileIndex(i)}
                 aria-label={`Go to slide ${i + 1}`}
-                className={`h-2 transition-all rounded-full cursor-pointer ${
-                  mobileIndex === i
+                className={`h-2 transition-all rounded-full cursor-pointer ${mobileIndex === i
                     ? "w-6 bg-[#F36C3D]"
                     : "w-2 bg-slate-300 hover:bg-slate-400"
-                }`}
+                  }`}
               />
             ))}
           </div>

@@ -71,12 +71,15 @@ export default function ExploreBlogs({ posts = [] }) {
         {/* Section Header with Search and Sort */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-5 mb-6 sm:mb-8">
           <div>
+            <div className="text-xs font-bold uppercase tracking-wider text-[#F36C3D] mb-1.5">
+              EXPLORE OUR BLOGS
+            </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
-              <span>Explore Blogs</span>
+              <span>Discover Insights That Matter to Your Business</span>
               <span className="text-slate-400 font-light">—</span>
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm mt-1 max-w-xl">
-              Browse our articles by category, search for topics or explore the latest insights.
+            <p className="text-slate-600 text-xs sm:text-sm mt-1.5 max-w-xl leading-relaxed">
+              Explore articles, ideas and practical perspectives across our digital services. Browse topics that interest you and discover insights relevant to your business needs.
             </p>
           </div>
 
