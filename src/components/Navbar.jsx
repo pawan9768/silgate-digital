@@ -460,77 +460,6 @@ export default function Navbar() {
                 Industries
               </Link>
 
-              {/* resources */}
-              {/* <div className="border-b border-zinc-100">
-                <button
-                  type="button"
-                  onClick={() => toggleMobileSubmenu("resources")}
-                  className="
-                    w-full
-                    flex
-                    items-center
-                    justify-between
-                    py-3
-                    text-base
-                    font-semibold
-                    text-zinc-900
-                  "
-                  aria-expanded={mobileExpandedSection === "resources"}
-                >
-                  <span>Resources</span>
-                  <ChevronDown
-                    className={`
-                      w-5
-                      h-5
-                      transition-transform
-                      ${
-                        mobileExpandedSection === "resources"
-                          ? "rotate-180"
-                          : ""
-                      }
-                    `}
-                  />
-                </button>
-                {mobileExpandedSection === "resources" && (
-                  <div
-                    className="
-                      mb-3
-                      ml-2
-                      rounded-xl
-                      bg-zinc-50
-                      p-3
-                    "
-                  >
-                    <Link
-                      to="/blog"
-                      onClick={closeMobileMenu}
-                      className="
-                        block
-                        py-2
-                        text-sm
-                        text-zinc-700
-                        hover:text-[#00529B]
-                      "
-                    >
-                      Blog
-                    </Link>
-                    <Link
-                      to="/case-studies"
-                      onClick={closeMobileMenu}
-                      className="
-                        block
-                        py-2
-                        text-sm
-                        text-zinc-700
-                        hover:text-[#00529B]
-                      "
-                    >
-                      Case Studies
-                    </Link>
-                  </div>
-                )}
-              </div> */}
-
               {/* blog */}
               <Link
                 to="/blog"
@@ -562,7 +491,7 @@ export default function Navbar() {
                   ${isActive("/case-studies") ? "text-[#00529B]" : "text-zinc-900"}
                 `}
               >
-                Blog
+                Case Studies
               </Link>
 
               {/* careers */}
