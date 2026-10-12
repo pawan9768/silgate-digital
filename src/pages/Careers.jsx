@@ -26,17 +26,17 @@ export default function Careers() {
   // Extract unique departments and work modes from data
   const departments = useMemo(() => {
     const list = Array.from(new Set(jobsData.map((j) => j.category).filter(Boolean)));
-    return ["All Departments", ...list];
+    return ["All Departments", ...list,"SEO","UGC & Content Creation","Social Media Management"];
   }, []);
 
   const workModes = useMemo(() => {
     const list = Array.from(new Set(jobsData.map((j) => j.workMode).filter(Boolean)));
-    return ["All Work Modes", ...list];
+    return ["All Work Modes","Remote", ...list];
   }, []);
 
   const jobTypes = useMemo(() => {
     const list = Array.from(new Set(jobsData.map((j) => j.employmentType).filter(Boolean)));
-    return ["All Types", ...list];
+    return ["All Types","Part-Time","Internship","Contract", ...list];
   }, []);
 
   // Filter Logic
