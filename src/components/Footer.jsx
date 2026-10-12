@@ -46,12 +46,12 @@ const industryLinks = [
 const socialLinks = [
   {
     label: "LinkedIn",
-    href: "https://in.linkedin.com/company/Silgate-media-pvt-ltd",
+    href: "https://www.linkedin.com/company/silgate-digital/home/",
     Icon: Linkedin,
   },
   {
     label: "Instagram",
-    href: "https://www.instagram.com/Silgate.media/",
+    href: "https://www.instagram.com/silgate_digital/",
     Icon: Instagram,
   },
   {
