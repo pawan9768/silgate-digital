@@ -142,430 +142,44 @@ export default function Navbar() {
               About Us
             </Link>
             {/* Services */}
-            <div
-              className="relative"
-              onMouseEnter={() => setActiveDropdown("services")}
-              onMouseLeave={() => setActiveDropdown(null)}
+            <Link
+              to="/services"
+              className={`
+                px-3
+                py-2
+                text-sm
+                font-medium
+                rounded-lg
+                transition-colors
+                ${
+                  isActive("/services")
+                    ? "text-[#00529B] font-semibold"
+                    : "text-zinc-700 hover:text-[#00529B] hover:bg-zinc-50"
+                }
+              `}
             >
-              <Link
-                to="/services"
-                className={`
-                  flex
-                  items-center
-                  gap-1
-                  px-3
-                  py-2
-                  text-sm
-                  font-medium
-                  rounded-lg
-                  transition-colors
-                  ${
-                    isParentActive("/services")
-                      ? "text-[#00529B] font-semibold"
-                      : "text-zinc-700 hover:text-[#00529B] hover:bg-zinc-50"
-                  }
-                `}
-              >
-                Services
-                <ChevronDown className="w-3.5 h-3.5" />
-              </Link>
-              {activeDropdown === "services" && (
-                <div
-                  className="
-                    absolute
-                    top-full
-                    -left-40
-                    xl:-left-32
-                    mt-1
-                    w-[900px]
-                    max-w-[90vw]
-                    bg-white
-                    rounded-2xl
-                    shadow-2xl
-                    border
-                    border-zinc-100
-                    p-6
-                  "
-                >
-                  <div className="grid grid-cols-4 gap-6 text-sm">
-                    {/* COLUMN 1 */}
-                    <div>
-                      <h3 className="font-bold text-xs text-[#00529B] uppercase tracking-wider mb-3">
-                        Creative & Brand
-                      </h3>
-                      <div className="space-y-2">
-                        <Link
-                          to="/services/ai-video-production-agency"
-                          className="block hover:text-[#00529B]"
-                        >
-                          AI Generated Videos
-                        </Link>
-                        <Link
-                          to="/services/creative-communication"
-                          className="block hover:text-[#00529B]"
-                        >
-                          Creative & Communication
-                        </Link>
-                        <Link
-                          to="/services/creative-communication/brand-strategy"
-                          className="block text-xs text-slate-500 hover:text-[#F36C3D]"
-                        >
-                          Brand Strategy
-                        </Link>
-                        <Link
-                          to="/services/creative-communication/logo-identity-design"
-                          className="block text-xs text-slate-500 hover:text-[#F36C3D]"
-                        >
-                          Logo & Identity Design
-                        </Link>
-                        <Link
-                          to="/services/creative-communication/product-packaging"
-                          className="block text-xs text-slate-500 hover:text-[#F36C3D]"
-                        >
-                          Product Packaging
-                        </Link>
-                        <Link
-                          to="/services/brand-video-production-agency"
-                          className="block hover:text-[#00529B]"
-                        >
-                          Brand Video Production
-                        </Link>
-                        <Link
-                          to="/services/ugc-video-agency"
-                          className="block hover:text-[#00529B]"
-                        >
-                          UGC Video Agency
-                        </Link>
-                      </div>
-                    </div>
-                    {/* COLUMN 2 */}
-                    <div>
-                      <h3 className="font-bold text-xs text-[#00529B] uppercase tracking-wider mb-3">
-                        Content & Reputation
-                      </h3>
-                      <div className="space-y-2">
-                        <Link
-                          to="/services/content-marketing"
-                          className="block hover:text-[#00529B]"
-                        >
-                          Content Marketing
-                        </Link>
-                        <Link
-                          to="/services/content-marketing/seo-copywriting"
-                          className="block text-xs text-slate-500 hover:text-[#F36C3D]"
-                        >
-                          SEO Copywriting
-                        </Link>
-                        <Link
-                          to="/services/content-marketing/video-tvc-scripts"
-                          className="block text-xs text-slate-500 hover:text-[#F36C3D]"
-                        >
-                          Video & TVC Scripts
-                        </Link>
-                        <Link
-                          to="/services/online-reputation-management"
-                          className="block hover:text-[#00529B]"
-                        >
-                          Online Reputation Mgmt
-                        </Link>
-                        <Link
-                          to="/services/online-reputation-management/brand-reputation-management"
-                          className="block text-xs text-slate-500 hover:text-[#F36C3D]"
-                        >
-                          Brand Reputation
-                        </Link>
-                        <Link
-                          to="/services/online-reputation-management/corporate-reputation-management"
-                          className="block text-xs text-slate-500 hover:text-[#F36C3D]"
-                        >
-                          Corporate Reputation
-                        </Link>
-                        <Link
-                          to="/services/ad-management"
-                          className="block hover:text-[#00529B]"
-                        >
-                          Ad Management
-                        </Link>
-                      </div>
-                    </div>
-                    {/* COLUMN 3 */}
-                    <div>
-                      <h3 className="font-bold text-xs text-[#00529B] uppercase tracking-wider mb-3">
-                        Search & Performance
-                      </h3>
-                      <div className="space-y-2">
-                        <Link
-                          to="/services/seo-services"
-                          className="block hover:text-[#00529B]"
-                        >
-                          SEO Services
-                        </Link>
-                        <Link
-                          to="/aeo-services-company-in-india"
-                          className="block hover:text-[#00529B]"
-                        >
-                          AEO Services
-                        </Link>
-                        <Link
-                          to="/generative-engine-optimization-india"
-                          className="block hover:text-[#00529B]"
-                        >
-                          GEO Services
-                        </Link>
-                        <Link
-                          to="/performance-marketing-agency"
-                          className="block hover:text-[#00529B]"
-                        >
-                          Performance Marketing
-                        </Link>
-                        <Link
-                          to="/services/b2b-seo-company-in-india"
-                          className="block text-xs text-slate-500 hover:text-[#F36C3D]"
-                        >
-                          B2B SEO Company
-                        </Link>
-                        <Link
-                          to="/services/local-seo-company-in-india"
-                          className="block text-xs text-slate-500 hover:text-[#F36C3D]"
-                        >
-                          Local SEO & GMB
-                        </Link>
-                        <Link
-                          to="/services/search-engine-marketing"
-                          className="block text-xs text-slate-500 hover:text-[#F36C3D]"
-                        >
-                          Search Engine Marketing
-                        </Link>
-                      </div>
-                    </div>
-                    {/* COLUMN 4 */}
-                    <div>
-                      <h3 className="font-bold text-xs text-[#00529B] uppercase tracking-wider mb-3">
-                        Social & Tech
-                      </h3>
-                      <div className="space-y-2">
-                        <Link
-                          to="/services/social-media-marketing"
-                          className="block hover:text-[#00529B]"
-                        >
-                          Social Media Marketing
-                        </Link>
-                        <Link
-                          to="/services/influencer-marketing-agency"
-                          className="block hover:text-[#00529B]"
-                        >
-                          Influencer Marketing
-                        </Link>
-                        <Link
-                          to="/services/website-development-india"
-                          className="block hover:text-[#00529B]"
-                        >
-                          Website Development
-                        </Link>
-                        <Link
-                          to="/services/website-development-india/corporate-website-design"
-                          className="block text-xs text-slate-500 hover:text-[#F36C3D]"
-                        >
-                          Corporate Web Design
-                        </Link>
-                        <Link
-                          to="/services/web-application-development"
-                          className="block hover:text-[#00529B]"
-                        >
-                          Web App Development
-                        </Link>
-                        <Link
-                          to="/rankstreet"
-                          className="block hover:text-[#00529B]"
-                        >
-                          RankStreet
-                        </Link>
-                        <Link
-                          to="/managed-it-services-usa"
-                          className="block hover:text-[#00529B]"
-                        >
-                          Managed IT Services
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="
-                    mt-6
-                    pt-4
-                    border-t
-                    border-zinc-100
-                    flex
-                    items-center
-                    justify-between
-                    gap-4
-                  "
-                  >
-                    <span className="text-xs text-zinc-500">
-                      Explore our complete digital services.
-                    </span>
-                    <Link
-                      to="/services"
-                      className="
-                        text-xs
-                        font-semibold
-                        text-[#00529B]
-                        flex
-                        items-center
-                        gap-1
-                      "
-                    >
-                      View All Services
-                      <ArrowUpRight className="w-3.5 h-3.5" />
-                    </Link>
-                  </div>
-                </div>
-              )}
-            </div>
-            {/* Industry */}
-            <div
-              className="relative"
-              onMouseEnter={() => setActiveDropdown("industry")}
-              onMouseLeave={() => setActiveDropdown(null)}
+              Services
+            </Link>
+
+            {/* industries */}
+            <Link
+              to="/industries"
+              className={`
+                px-3
+                py-2
+                text-sm
+                font-medium
+                rounded-lg
+                transition-colors
+                ${
+                  isActive("/industries")
+                    ? "text-[#00529B] font-semibold"
+                    : "text-zinc-700 hover:text-[#00529B] hover:bg-zinc-50"
+                }
+              `}
             >
-              <Link
-                to="/industries"
-                className={`
-                  flex
-                  items-center
-                  gap-1
-                  px-3
-                  py-2
-                  text-sm
-                  font-medium
-                  rounded-lg
-                  transition-colors
-                  ${
-                    isActive("/industries") ||
-                    isActive("/industry") ||
-                    isParentActive("/industries")
-                      ? "text-[#00529B] font-semibold"
-                      : "text-zinc-700 hover:text-[#00529B] hover:bg-zinc-50"
-                  }
-                `}
-              >
-                Industries
-                <ChevronDown className="w-3.5 h-3.5" />
-              </Link>
-              {activeDropdown === "industry" && (
-                <div
-                  className="
-                    absolute
-                    top-full
-                    left-0
-                    mt-1
-                    w-[680px]
-                    max-w-[90vw]
-                    bg-white
-                    rounded-2xl
-                    shadow-2xl
-                    border
-                    border-zinc-100
-                    p-6
-                  "
-                >
-                  <h3 className="font-bold text-xs text-[#00529B] uppercase tracking-wider mb-3">
-                    Industries We Excel In
-                  </h3>
-                  <div className="grid grid-cols-3 gap-3 text-sm">
-                    {[
-                      ["/automotive-digital-marketing-agency", "🚗 Automotive"],
-                      [
-                        "/beauty-skin-care-digital-marketing-agency",
-                        "✨ Beauty & Skin Care",
-                      ],
-                      [
-                        "/digital-marketing-agency-for-business-to-business",
-                        "🏢 B2B Marketing",
-                      ],
-                      [
-                        "/digital-marketing-agency-for-education-industry",
-                        "🎓 Education",
-                      ],
-                      [
-                        "/digital-marketing-agency-for-food-beverage",
-                        "🍔 Food & Beverage",
-                      ],
-                      [
-                        "/digital-marketing-services-for-healthcare",
-                        "🩺 Healthcare",
-                      ],
-                      [
-                        "/digital-marketing-agency-for-real-estate",
-                        "🏠 Real Estate",
-                      ],
-                      [
-                        "/digital-marketing-for-financial-services",
-                        "💳 Financial Services",
-                      ],
-                      [
-                        "/digital-marketing-for-travel-tourism",
-                        "✈️ Travel & Tourism",
-                      ],
-                      [
-                        "/digital-marketing-services-for-ev",
-                        "⚡ Electric Vehicles",
-                      ],
-                      [
-                        "/digital-marketing-services-for-home-decor",
-                        "🛋️ Home Decor",
-                      ],
-                      ["/digital-marketing-for-ecommerce-2", "🛍️ E-Commerce"],
-                    ].map(([path, label]) => (
-                      <Link
-                        key={path}
-                        to={path}
-                        className="
-                          p-2
-                          rounded-lg
-                          text-zinc-700
-                          hover:text-[#00529B]
-                          hover:bg-zinc-50
-                          transition-colors
-                        "
-                      >
-                        {label}
-                      </Link>
-                    ))}
-                  </div>
-                  <div
-                    className="
-                    mt-4
-                    pt-3
-                    border-t
-                    border-zinc-100
-                    flex
-                    items-center
-                    justify-between
-                    gap-4
-                  "
-                  >
-                    <span className="text-xs text-zinc-500">
-                      Explore all industry solutions.
-                    </span>
-                    <Link
-                      to="/industries"
-                      className="
-                        text-xs
-                        font-semibold
-                        text-[#00529B]
-                        flex
-                        items-center
-                        gap-1
-                      "
-                    >
-                      View All Industries
-                      <ArrowUpRight className="w-3.5 h-3.5" />
-                    </Link>
-                  </div>
-                </div>
-              )}
-            </div>
+              Industries
+            </Link>
 
             {/* blog */}
             <Link
@@ -813,190 +427,9 @@ export default function Navbar() {
                 About Us
               </Link>
 
-              {/* services */}
-              <div className="border-b border-zinc-100">
-                <button
-                  type="button"
-                  onClick={() => toggleMobileSubmenu("services")}
-                  className="
-                    w-full
-                    flex
-                    items-center
-                    justify-between
-                    py-3
-                    text-base
-                    font-semibold
-                    text-zinc-900
-                  "
-                  aria-expanded={mobileExpandedSection === "services"}
-                >
-                  <span>Services</span>
-                  <ChevronDown
-                    className={`
-                      w-5
-                      h-5
-                      transition-transform
-                      ${
-                        mobileExpandedSection === "services" ? "rotate-180" : ""
-                      }
-                    `}
-                  />
-                </button>
-                {mobileExpandedSection === "services" && (
-                  <div
-                    className="
-                      mb-3
-                      ml-2
-                      rounded-xl
-                      bg-zinc-50
-                      p-3
-                      space-y-1
-                    "
-                  >
-                    <Link
-                      to="/services"
-                      onClick={closeMobileMenu}
-                      className="
-                        block
-                        py-2
-                        font-bold
-                        text-[#00529B]
-                        border-b
-                        border-zinc-200
-                      "
-                    >
-                      All Services
-                    </Link>
-                    {[
-                      [
-                        "/services/ai-video-production-agency",
-                        "AI Video Production",
-                      ],
-                      ["/services/seo-services", "SEO Services"],
-                      ["/aeo-services-company-in-india", "AEO Services"],
-                      ["/generative-engine-optimization-india", "GEO Services"],
-                      [
-                        "/performance-marketing-agency",
-                        "Performance Marketing",
-                      ],
-                      ["/services/b2b-seo-company-in-india", "B2B SEO"],
-                      [
-                        "/services/local-seo-company-in-india",
-                        "Local SEO & GMB",
-                      ],
-                      [
-                        "/services/social-media-marketing",
-                        "Social Media Marketing",
-                      ],
-                      [
-                        "/services/influencer-marketing-agency",
-                        "Influencer Marketing",
-                      ],
-                      [
-                        "/services/brand-video-production-agency",
-                        "Brand Video Production",
-                      ],
-                      ["/services/ugc-video-agency", "UGC Video Agency"],
-                      [
-                        "/services/website-development-india",
-                        "Website Development",
-                      ],
-                      [
-                        "/services/web-application-development",
-                        "Web App Development",
-                      ],
-                      [
-                        "/services/creative-communication",
-                        "Creative & Communication",
-                      ],
-                      ["/services/content-marketing", "Content Marketing"],
-                      [
-                        "/services/online-reputation-management",
-                        "Online Reputation Management",
-                      ],
-                      ["/services/ad-management", "Ad Management"],
-                    ].map(([path, label]) => (
-                      <Link
-                        key={path}
-                        to={path}
-                        onClick={closeMobileMenu}
-                        className="
-                          block
-                          py-2
-                          text-sm
-                          text-zinc-700
-                          hover:text-[#00529B]
-                        "
-                      >
-                        {label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-              {/* =================================================
-                  PRODUCTS
-              ================================================== */}
-              {/* <div className="border-b border-zinc-100">
-                <button
-                  type="button"
-                  onClick={() => toggleMobileSubmenu("products")}
-                  className="
-                    w-full
-                    flex
-                    items-center
-                    justify-between
-                    py-3
-                    text-base
-                    font-semibold
-                    text-zinc-900
-                  "
-                  aria-expanded={mobileExpandedSection === "products"}
-                >
-                  <span>Products</span>
-                  <ChevronDown
-                    className={`
-                      w-5
-                      h-5
-                      transition-transform
-                      ${
-                        mobileExpandedSection === "products" ? "rotate-180" : ""
-                      }
-                    `}
-                  />
-                </button>
-                {mobileExpandedSection === "products" && (
-                  <div
-                    className="
-                      mb-3
-                      ml-2
-                      rounded-xl
-                      bg-zinc-50
-                      p-3
-                    "
-                  >
-                    <Link
-                      to="/products"
-                      onClick={closeMobileMenu}
-                      className="
-                        block
-                        py-2
-                        text-sm
-                        font-medium
-                        text-zinc-700
-                        hover:text-[#00529B]
-                      "
-                    >
-                      Product List
-                    </Link>
-                  </div>
-                )}
-              </div> */}
-              {/* =================================================
-                  CLIENTS
-              ================================================== */}
-              {/* <Link
-                to="/clients"
+              {/* Services */}
+              <Link
+                to="/services"
                 onClick={closeMobileMenu}
                 className={`
                   block
@@ -1005,130 +438,27 @@ export default function Navbar() {
                   font-semibold
                   border-b
                   border-zinc-100
-                  ${isActive("/clients") ? "text-[#00529B]" : "text-zinc-900"}
+                  ${isActive("/services") ? "text-[#00529B]" : "text-zinc-900"}
                 `}
               >
-                Clients
-              </Link> */}
+                Services
+              </Link>
 
-              {/* industry */}
-              <div className="border-b border-zinc-100">
-                <button
-                  type="button"
-                  onClick={() => toggleMobileSubmenu("industry")}
-                  className="
-                    w-full
-                    flex
-                    items-center
-                    justify-between
-                    py-3
-                    text-base
-                    font-semibold
-                    text-zinc-900
-                  "
-                  aria-expanded={mobileExpandedSection === "industry"}
-                >
-                  <span>Industries</span>
-                  <ChevronDown
-                    className={`
-                      w-5
-                      h-5
-                      transition-transform
-                      ${
-                        mobileExpandedSection === "industry" ? "rotate-180" : ""
-                      }
-                    `}
-                  />
-                </button>
-                {mobileExpandedSection === "industry" && (
-                  <div
-                    className="
-                      mb-3
-                      ml-2
-                      rounded-xl
-                      bg-zinc-50
-                      p-3
-                      max-h-64
-                      overflow-y-auto
-                      space-y-1
-                    "
-                  >
-                    <Link
-                      to="/industries"
-                      onClick={closeMobileMenu}
-                      className="
-                        block
-                        py-2
-                        font-bold
-                        text-[#00529B]
-                        border-b
-                        border-zinc-200
-                      "
-                    >
-                      All Industries
-                    </Link>
-                    {[
-                      ["/automotive-digital-marketing-agency", "Automotive"],
-                      [
-                        "/beauty-skin-care-digital-marketing-agency",
-                        "Beauty & Skin Care",
-                      ],
-                      [
-                        "/digital-marketing-agency-for-business-to-business",
-                        "B2B Marketing",
-                      ],
-                      [
-                        "/digital-marketing-agency-for-education-industry",
-                        "Education",
-                      ],
-                      [
-                        "/digital-marketing-agency-for-food-beverage",
-                        "Food & Beverage",
-                      ],
-                      [
-                        "/digital-marketing-services-for-healthcare",
-                        "Healthcare",
-                      ],
-                      [
-                        "/digital-marketing-agency-for-real-estate",
-                        "Real Estate",
-                      ],
-                      [
-                        "/digital-marketing-for-financial-services",
-                        "Financial Services",
-                      ],
-                      [
-                        "/digital-marketing-for-travel-tourism",
-                        "Travel & Tourism",
-                      ],
-                      [
-                        "/digital-marketing-services-for-ev",
-                        "Electric Vehicles",
-                      ],
-                      [
-                        "/digital-marketing-services-for-home-decor",
-                        "Home Decor",
-                      ],
-                      ["/digital-marketing-for-ecommerce-2", "E-Commerce"],
-                    ].map(([path, label]) => (
-                      <Link
-                        key={path}
-                        to={path}
-                        onClick={closeMobileMenu}
-                        className="
-                          block
-                          py-2
-                          text-sm
-                          text-zinc-700
-                          hover:text-[#00529B]
-                        "
-                      >
-                        {label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+              <Link
+                to="/industries"
+                onClick={closeMobileMenu}
+                className={`
+                  block
+                  py-3
+                  text-base
+                  font-semibold
+                  border-b
+                  border-zinc-100
+                  ${isActive("/industries") ? "text-[#00529B]" : "text-zinc-900"}
+                `}
+              >
+                Industries
+              </Link>
 
               {/* resources */}
               {/* <div className="border-b border-zinc-100">
@@ -1232,7 +562,7 @@ export default function Navbar() {
                   ${isActive("/case-studies") ? "text-[#00529B]" : "text-zinc-900"}
                 `}
               >
-                Case Studies
+                Blog
               </Link>
 
               {/* careers */}
