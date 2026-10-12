@@ -1,193 +1,278 @@
-import imgPackaging from '../assets/images/brand-packaging-beauty-brands-us-retail-1024x576.webp';
-import imgDubai from '../assets/images/corporate-films-real-estate-developers-dubai-1024x576.webp';
-import imgSearch from '../assets/images/search-advertising-professional-services-new-york-1024x576.webp';
-import imgMelbourne from '../assets/images/lead-based-campaigns-interior-design-melbourne-1024x576.webp';
-import imgFintech from '../assets/images/web-app-development-fintech-startups-bangalore-1024x576.webp';
-import imgUkIt from '../assets/images/managed-it-services-small-medium-businesses-uk-1024x576.png.webp';
-import imgD2c from '../assets/images/brand-strategy-indian-d2c-global-expansion-1024x576.png';
-import imgSaas from '../assets/images/animation-explainer-videos-saas-companies-1024x576.webp';
-import imgUgc from '../assets/images/ugc-video-skincare-brands-uk-market-1024x576.webp';
-import imgBgc from '../assets/images/brand-generated-content-d2c-brands-1024x576.webp';
+import imgHeroCity from "../assets/images/contact_hero_cityscape.jpg";
+import imgDigitalMarketing from "../assets/images/digital-marketing-services.png";
+import imgSocialMedia from "../assets/images/social-media-management-services.png";
+import imgSocialMedia2 from "../assets/images/social-media-services.png";
+import imgWebDev from "../assets/images/web-dev-services.png";
+import imgSeo from "../assets/images/seo-services.png";
+import imgAnalytics from "../assets/images/analytic.webp";
+import imgGraphicDesign from "../assets/images/brand-strategy-indian-d2c-global-expansion-1024x576.png";
+import imgUgc from "../assets/images/ugc-services.png";
+import imgWebFintech from "../assets/images/web-app-development-fintech-startups-bangalore-1024x576.webp";
+import imgPackaging from "../assets/images/brand-packaging-beauty-brands-us-retail-1024x576.webp";
+import imgDubai from "../assets/images/corporate-films-real-estate-developers-dubai-1024x576.webp";
+import imgSearch from "../assets/images/search-advertising-professional-services-new-york-1024x576.webp";
 
 export const BLOG_POSTS = [
+  // ==========================================
+  // FEATURED POSTS (from Reference Design)
+  // ==========================================
   {
-    slug: 'brand-packaging-design-beauty-brands-us-retail-market',
-    title: 'Brand packaging design for beauty brands entering the US retail market',
-    excerpt: 'DigiStreet explains how brand packaging design for beauty brands entering the US retail market wins shelf attention and passes compliance checks.',
-    image: imgPackaging,
-    date: 'September 24, 2026',
-    author: 'DigiStreet Media Editorial',
-    readTime: '6 min read',
-    category: 'Branding & Packaging',
+    slug: "how-seo-can-drive-sustainable-business-growth-2026",
+    title: "How SEO Can Drive Sustainable Business Growth in 2026",
+    excerpt:
+      "Discover key strategies, trends and best practices to improve visibility and attract the right audience.",
+    image: imgHeroCity,
+    date: "Sep 25, 2026",
+    author: "Silgate SEO Team",
+    readTime: "5 min read",
+    category: "SEO",
+    featured: true,
+    isPrimaryFeatured: true,
     sections: [
       {
-        heading: 'Why brand packaging design for beauty brands entering the US retail market needs a fresh strategy',
-        text: 'Entering the US retail beauty landscape is markedly different from selling via domestic Indian D2C channels. American retailers—from Target and Sephora to Ulta and specialty boutiques—have stringent merchandising guidelines, shelf impact requirements, and packaging sustainability mandates. A pack that succeeded on Instagram must now communicate value in under 1.5 seconds to an in-store shopper walking down a crowded aisle.'
+        heading: "The Shift Toward Search Intent & AI Engine Visibility",
+        text: "In 2026, search algorithms prioritize authoritative content that addresses search intent directly. Driving organic traffic requires structured data, topical authority, and continuous technical refinement."
       },
       {
-        heading: 'Meeting FDA cosmetic labeling requirements before production',
-        text: 'The Modernization of Cosmetics Regulation Act (MoCRA) has transformed cosmetic compliance in the United States. Ingredient declarations, net quantity statements, warning panels, and responsible person listings must adhere strictly to FDA specifications. Minor typographic oversights can trigger customs holds or costly retail chargebacks.'
-      },
-      {
-        heading: 'Watching the line between cosmetic and drug claims',
-        text: 'Formulas containing active sunscreens, anti-acne compounds, or deep therapeutic ingredients frequently cross into Over-The-Counter (OTC) drug territory under US law. Your carton design and product copy must carefully navigate claim boundaries to avoid FDA warning letters while preserving high-impact consumer benefits.'
-      },
-      {
-        heading: 'Designing beauty product packaging for retail shelves and screens',
-        text: 'Modern packaging must perform equally well on shelf and in digital feeds. High-contrast typography, tactile finishes (embossing, soft-touch matte coats), and unboxing theater are crucial for driving organic user-generated content and viral TikTok reviews.'
+        heading: "Conversion-Focused Organic Funnels",
+        text: "Traffic without conversion is vanity. Modern SEO focuses on high-intent long-tail keywords that guide visitors seamlessly toward qualified leads and booked consultations."
       }
     ]
   },
   {
-    slug: 'corporate-films-real-estate-developers-dubai',
-    title: 'Corporate films for real estate developers in Dubai',
-    excerpt: 'DigiStreet explains how corporate films for real estate developers in Dubai build the trust that turns international buyers into booked sales.',
-    image: imgDubai,
-    date: 'September 20, 2026',
-    author: 'Video Production Pod',
-    readTime: '5 min read',
-    category: 'Video Production',
+    slug: "digital-marketing-trends-every-business-should-know",
+    title: "Digital Marketing Trends Every Business Should Know",
+    excerpt:
+      "Stay ahead of the curve with actionable insights into omnichannel funnels, AI-driven targeting, and modern attribution.",
+    image: imgDigitalMarketing,
+    date: "Sep 18, 2026",
+    author: "Silgate Growth Pod",
+    readTime: "4 min read",
+    category: "Digital Marketing",
+    featured: true,
     sections: [
       {
-        heading: 'The High-Stakes UAE Real Estate Video Ecosystem',
-        text: 'In Dubai\'s competitive luxury property market, off-plan buyers often make multimillion-dollar investment decisions from London, Mumbai, or Singapore without setting foot in the UAE. A corporate film is not just an aesthetic showcase; it is an institutional trust-building instrument.'
-      },
-      {
-        heading: 'Cinematography Meets Architectural CGI',
-        text: 'Seamlessly blending drone videography of prime Dubai districts with photorealistic architectural 3D renders enables developers to convey lifestyle, prestige, and tangible investment yield before construction breaks ground.'
+        heading: "Omnichannel Synergy in Modern Consumer Journeys",
+        text: "Connecting social ads, search touchpoints, and personalized email nurturing creates a unified brand footprint that reduces customer acquisition costs."
       }
     ]
   },
   {
-    slug: 'search-advertising-professional-services-new-york',
-    title: 'Search advertising for professional services firms in New York',
-    excerpt: 'DigiStreet explains how search advertising for professional services firms in New York turns costly clicks into qualified client consultations.',
-    image: imgSearch,
-    date: 'September 16, 2026',
-    author: 'PPC & Search Team',
-    readTime: '7 min read',
-    category: 'Search Advertising',
+    slug: "how-to-build-a-strong-brand-presence-on-social-media",
+    title: "How to Build a Strong Brand Presence on Social Media",
+    excerpt:
+      "Learn how consistent storytelling, high-retention formats, and community engagement elevate brand authority.",
+    image: imgSocialMedia,
+    date: "Sep 12, 2026",
+    author: "Silgate Social Studio",
+    readTime: "6 min read",
+    category: "Social Media Management",
+    featured: true,
     sections: [
       {
-        heading: 'Managing Extreme Cost-Per-Click in Manhattan',
-        text: 'With legal, accounting, and advisory clicks frequently surpassing $80 to $150 per click on Google Ads in the New York metropolitan area, traditional broad bidding is financial suicide. Precision negative keyword sculpting and dayparting are vital.'
-      },
-      {
-        heading: 'Conversion Architecture for High-Ticket Retainers',
-        text: 'A high-net-worth client or enterprise CFO does not fill out a generic contact form. Dedicated landing pages must showcase partner credentials, verifiable case results, and frictionless consultation booking calendars.'
+        heading: "Authenticity & Video-First Formats",
+        text: "Short-form video paired with genuine creator voices outpaces heavily scripted corporate ads across LinkedIn, Instagram, and YouTube Shorts."
       }
     ]
   },
+
+  // ==========================================
+  // EXPLORE BLOGS POSTS (from Reference Design)
+  // ==========================================
   {
-    slug: 'lead-based-campaigns-interior-design-melbourne',
-    title: 'Lead-based campaigns for interior design studios in Melbourne',
-    excerpt: 'DigiStreet explains how lead-based campaigns for interior design studios in Melbourne bring qualified project enquiries instead of browsing traffic.',
-    image: imgMelbourne,
-    date: 'September 12, 2026',
-    author: 'Performance Marketing Team',
-    readTime: '5 min read',
-    category: 'Lead Generation',
+    slug: "essential-features-of-a-high-performing-business-website",
+    title: "Essential Features of a High-Performing Business Website",
+    excerpt:
+      "A complete guide to speed, responsiveness, conversion architecture, and UX principles that turn visitors into clients.",
+    image: imgWebDev,
+    date: "Sep 10, 2026",
+    author: "Web Engineering Team",
+    readTime: "5 min read",
+    category: "Web Development",
     sections: [
       {
-        heading: 'Filtering Window Shoppers from Serious Renovators',
-        text: 'Design studios often suffer from high inquiry volume with inadequate project budgets. Multi-step qualifying quizzes and interactive budget estimators filter out low-intent users before they reach design partner calendars.'
+        heading: "Core Web Vitals & Sub-Second Page Loads",
+        text: "Speed directly impacts conversion rate and ranking signals. Modern frameworks and image compression ensure lightning-fast performance across all screen sizes."
       }
     ]
   },
   {
-    slug: 'web-app-development-fintech-startups-bangalore',
-    title: 'Web app development for fintech startups in Bangalore',
-    excerpt: 'DigiStreet explains how web app development for fintech startups in Bangalore balances speed to market with RBI compliance, security, and scale.',
-    image: imgFintech,
-    date: 'September 08, 2026',
-    author: 'Web & Engineering Pod',
-    readTime: '8 min read',
-    category: 'Web Development',
+    slug: "on-page-vs-off-page-seo-what-works-best-in-2026",
+    title: "On-Page vs Off-Page SEO: What Works Best in 2026?",
+    excerpt:
+      "Analyzing the balance between technical on-page architecture and high-authority digital PR backlinks.",
+    image: imgSeo,
+    date: "Sep 08, 2026",
+    author: "Silgate SEO Pod",
+    readTime: "4 min read",
+    category: "SEO",
     sections: [
       {
-        heading: 'Balancing Agile Sprints with Strict Financial Compliance',
-        text: 'Bangalore\'s burgeoning fintech ecosystem demands rapid product iteration alongside stringent compliance with Reserve Bank of India data localization and encryption directives.'
+        heading: "Balancing Content Quality with Backlink Authority",
+        text: "While on-page relevance sets the foundation, authoritative industry mentions provide the credibility search engines need to award top rankings."
       }
     ]
   },
   {
-    slug: 'managed-it-services-for-small-and-medium-businesses-in-the-uk',
-    title: 'Managed IT services for small and medium businesses in the UK',
-    excerpt: 'DigiStreet explains how managed IT services for small and medium businesses in the UK reduce downtime, strengthen security, and control costs.',
-    image: imgUkIt,
-    date: 'September 04, 2026',
-    author: 'IT Services Team',
-    readTime: '6 min read',
-    category: 'Managed IT',
+    slug: "10-creative-ideas-to-boost-social-media-engagement",
+    title: "10 Creative Ideas to Boost Social Media Engagement",
+    excerpt:
+      "Fresh formats, interactive polls, carousel structures, and community questions that drive authentic interactions.",
+    image: imgSocialMedia2,
+    date: "Aug 28, 2026",
+    author: "Creative Content Team",
+    readTime: "5 min read",
+    category: "Social Media Management",
     sections: [
       {
-        heading: 'Cybersecurity & Downtime Mitigation for UK SMEs',
-        text: 'Rising cyber threats and strict GDPR obligations make outsourced 24/7 Managed IT support essential for British SMBs looking to scale without ballooning internal overhead.'
+        heading: "Engaging Audiences with Interactive Formats",
+        text: "Ask insightful questions, share raw behind-the-scenes moments, and structure educational carousels with clear hooks."
       }
     ]
   },
   {
-    slug: 'brand-strategy-indian-d2c-startups-international-markets',
-    title: 'Brand strategy for Indian D2C startups entering international markets',
-    excerpt: 'DigiStreet explains how brand strategy for Indian D2C startups entering international markets turns home-market success into global growth.',
-    image: imgD2c,
-    date: 'August 30, 2026',
-    author: 'Brand Strategy Team',
-    readTime: '7 min read',
-    category: 'Brand Strategy',
+    slug: "how-data-driven-marketing-helps-businesses-grow-faster",
+    title: "How Data-Driven Marketing Helps Businesses Grow Faster",
+    excerpt:
+      "Leveraging real-time analytics, user behavior heatmaps, and multi-touch attribution to maximize campaign ROI.",
+    image: imgAnalytics,
+    date: "Aug 20, 2026",
+    author: "Performance Analytics Team",
+    readTime: "6 min read",
+    category: "Digital Marketing",
     sections: [
       {
-        heading: 'Overcoming the Made-in-India Perception Paradox',
-        text: 'Indian D2C brands are world-class in formulation, design, and manufacturing. Translating that domestic market traction into US and European consumer trust requires strategic repositioning around heritage, efficacy, and ethical sourcing.'
+        heading: "Eliminating Guesswork with Precision Analytics",
+        text: "Tracking each step of the buyer journey enables smart allocation of marketing budgets to channels that produce actual revenue."
       }
     ]
   },
   {
-    slug: 'animation-and-explainer-videos-for-saas-companies',
-    title: 'Animation and Explainer Videos for SaaS Companies',
-    excerpt: 'Why explainer videos for SaaS companies outperform screen recordings, and what actually goes into producing one that keeps viewers watching.',
-    image: imgSaas,
-    date: 'August 25, 2026',
-    author: 'Creative Motion Studio',
-    readTime: '5 min read',
-    category: 'Animation & Motion',
+    slug: "how-visual-design-impacts-brand-perception",
+    title: "How Visual Design Impacts Brand Perception",
+    excerpt:
+      "Understanding typography, color psychology, and brand consistency in creating lasting customer trust.",
+    image: imgGraphicDesign,
+    date: "Aug 14, 2026",
+    author: "Design Studio Lead",
+    readTime: "5 min read",
+    category: "Creative & Graphic Design",
     sections: [
       {
-        heading: 'Deconstructing Complex Software into Compelling Metaphors',
-        text: 'Screen recordings show what buttons to press; bespoke 2D/3D animation shows the fundamental business transformation your software delivers to users.'
+        heading: "The Subconscious Psychology of Brand Aesthetics",
+        text: "High-end design immediately communicates credibility, enabling businesses to command premium pricing and customer loyalty."
       }
     ]
   },
   {
-    slug: 'ugc-video-production-for-skincare-brands-entering-the-uk-market',
-    title: 'UGC Video Production for Skincare Brands Entering the UK Market',
-    excerpt: 'What Indian skincare brands need to know about producing UGC video before launching into a UK market that trusts real footage over polished ads.',
+    slug: "why-ugc-is-the-future-of-brand-storytelling",
+    title: "Why UGC Is the Future of Brand Storytelling",
+    excerpt:
+      "Why consumers trust relatable customer experiences more than traditional commercial advertisements.",
     image: imgUgc,
-    date: 'August 20, 2026',
-    author: 'UGC Studio Lead',
-    readTime: '6 min read',
-    category: 'UGC Video',
+    date: "Aug 08, 2026",
+    author: "UGC Creative Pod",
+    readTime: "4 min read",
+    category: "UGC & Content Creation",
     sections: [
       {
-        heading: 'Why British Consumers Demand Unfiltered Authenticity',
-        text: 'UK beauty consumers have developed acute advertising fatigue. Testimonials shot on iPhones with genuine bathroom lighting routinely generate 3x higher click-throughs than studio sets.'
+        heading: "Peer-to-Peer Trust in Modern Marketing",
+        text: "Authentic user-generated videos resonate with consumers because they demonstrate real products solving real everyday problems."
       }
     ]
   },
   {
-    slug: 'brand-generated-content-a-new-alternative-to-influencer-marketing-for-d2c-brands',
-    title: 'Brand Generated Content: A New Alternative to Influencer Marketing for D2C Brands',
-    excerpt: 'Why more D2C brands are shifting budget from influencer partnerships toward Brand Generated Content, and what that shift actually looks like.',
-    image: imgBgc,
-    date: 'August 15, 2026',
-    author: 'Growth Pod',
-    readTime: '6 min read',
-    category: 'Growth Strategies',
+    slug: "local-seo-strategies-for-growing-your-business",
+    title: "Local SEO Strategies for Growing Your Business",
+    excerpt:
+      "Master Google Business Profile optimization, localized citations, and regional keyword dominance.",
+    image: imgSeo,
+    date: "Jul 29, 2026",
+    author: "Local Search Specialist",
+    readTime: "5 min read",
+    category: "SEO",
     sections: [
       {
-        heading: 'Retaining Creative Ownership and Eliminating Creator Risk',
-        text: 'Brand Generated Content (BGC) provides full script and asset ownership, eliminating the unpredictability, contractual delays, and ephemeral lifespan of one-off influencer sponsorships.'
+        heading: "Dominating the Local Map Pack",
+        text: "Consistent NAP data, positive customer reviews, and hyper-local landing pages ensure your business captures nearby search demand."
+      }
+    ]
+  },
+  {
+    slug: "website-redesign-checklist-for-better-performance",
+    title: "Website Redesign Checklist for Better Performance",
+    excerpt:
+      "Step-by-step audit guide covering URL redirects, responsive design, brand coherence, and technical SEO hygiene.",
+    image: imgWebFintech,
+    date: "Jul 20, 2026",
+    author: "Silgate Engineering",
+    readTime: "6 min read",
+    category: "Web Development",
+    sections: [
+      {
+        heading: "Protecting Search Traffic During Redesigns",
+        text: "A proper 301 redirect map and staging environment audit guarantee that redesigns elevate traffic rather than hurting rankings."
+      }
+    ]
+  },
+
+  // Additional In-depth Articles
+  {
+    slug: "brand-packaging-design-beauty-brands-us-retail-market",
+    title: "Brand packaging design for beauty brands entering the US retail market",
+    excerpt: "Silgate explains how brand packaging design for beauty brands entering the US retail market wins shelf attention.",
+    image: imgPackaging,
+    date: "Jul 15, 2026",
+    author: "Branding Editorial",
+    readTime: "6 min read",
+    category: "Creative & Graphic Design",
+    sections: [
+      {
+        heading: "Shelf Appeal & Compliance",
+        text: "Packaging must pass FDA MoCRA requirements while communicating value in under 1.5 seconds."
+      }
+    ]
+  },
+  {
+    slug: "corporate-films-real-estate-developers-dubai",
+    title: "Corporate films for real estate developers in Dubai",
+    excerpt: "How corporate films for real estate developers in Dubai build the trust that turns international buyers into sales.",
+    image: imgDubai,
+    date: "Jul 10, 2026",
+    author: "Video Production Team",
+    readTime: "5 min read",
+    category: "UGC & Content Creation",
+    sections: [
+      {
+        heading: "Architectural Cinematography",
+        text: "Conveying prestige and tangible investment yield through high-production video."
+      }
+    ]
+  },
+  {
+    slug: "search-advertising-professional-services-new-york",
+    title: "Search advertising for professional services firms in New York",
+    excerpt: "How search advertising turns costly clicks into qualified client consultations.",
+    image: imgSearch,
+    date: "Jul 05, 2026",
+    author: "PPC Team",
+    readTime: "7 min read",
+    category: "Digital Marketing",
+    sections: [
+      {
+        heading: "High-Ticket Conversion Architecture",
+        text: "Precision negative keyword sculpting and dayparting are vital in hyper-competitive markets."
       }
     ]
   }
+];
+
+export const BLOG_CATEGORIES = [
+  "All",
+  "Web Development",
+  "SEO",
+  "Social Media Management",
+  "Digital Marketing",
+  "Creative & Graphic Design",
+  "UGC & Content Creation",
 ];
